@@ -19,7 +19,7 @@ module.exports = function check(str, bracketsConfig) {
            stack.pop();
         }
         if (openBracket.includes(strIn[i]) && closeBracket.includes(strIn[i])) {
-            if (stack.length && stack[stack.length - 1] === strIn[i]) {
+            if (stack[stack.length - 1] === strIn[i]) {
                 stack.pop();
             }
             else {
