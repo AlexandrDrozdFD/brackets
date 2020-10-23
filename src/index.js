@@ -18,6 +18,14 @@ module.exports = function check(str, bracketsConfig) {
         if (closeBracket.indexOf(strIn[i]) === openBracket.indexOf(stack[stack.length - 1])) {
            stack.pop();
         }
+        if (openBracket.includes(strIn[i]) && closeBracket.includes(strIn[i])) {
+            if (stack.length && stack[stack.length - 1] === strIn[i]) {
+                stack.pop();
+            }
+            else {
+                stack.push(strIn[i]);
+            }
+        }
     }
     return stack.length === 0;
     
